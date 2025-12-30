@@ -45,17 +45,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(10, 14, 26, 0.8)';
-    }
-    
-    lastScroll = currentScroll;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.style.background = 'rgba(10, 14, 26, 0.95)';
+        } else {
+            navbar.style.background = 'rgba(10, 14, 26, 0.8)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
 
 // Form submission
 const contactForm = document.getElementById('contactForm');
